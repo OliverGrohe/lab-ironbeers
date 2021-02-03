@@ -1,14 +1,11 @@
 <h1>Random Beers Page</h1>
-{{!-- {{> partial this}} --}}
-{{!-- {{#each randombeer}} --}}
-<div>
-    {{> partial this}}
-   <h4>Food Pairing</h4>
- <ul>
-    {{#each this.food_pairing}}
-    <li>{{this}}</li>
+     {{> partial this}}
+     {{#each beers}}
+     <h4>Food Pairing</h4>
+     <h3><ul>
+         <li>{{this.food_pairing.[0]}}</li>
+         <li>{{this.food_pairing.[1]}}</li>
+         <li>{{this.food_pairing.[2]}}</li>
+     </ul></h3>
+     <p> Brewers Tips: {{this.brewers_tips}} </p>
     {{/each}}
-</ul>
-   <p> Brewers Tips: {{this.brewers_tips}} </p>
-</div>
-{{!-- {{/each}} --}}

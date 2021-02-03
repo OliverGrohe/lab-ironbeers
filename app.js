@@ -16,9 +16,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 hbs.registerPartials(__dirname + '/views/partial')
 
-
-
-
 // Add the route handlers here:
 
 app.get('/', (req, res) => {
@@ -41,11 +38,11 @@ app.get("/random-beers", (req, res) => {
 
   punkAPI.getRandom()
   .then(beers => {
-    // beer => [{randomBeer}]
     res.render('random-beers.hbs', {beers})
   })
+  .catch(() => {
 
-  //res.render('random-beers.hbs')
+  })
 });
 
 app.listen(3000, () => console.log('🏃‍ on port 3000'));
